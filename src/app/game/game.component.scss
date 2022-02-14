@@ -1,0 +1,116 @@
+.field {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-image: url('../../assets/img/table.jpg');
+    background-repeat: no-repeat;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-stack {
+    position: relative;
+    img {
+        position: absolute;
+        width: 140px;
+    }
+}
+
+.top-card {
+    cursor: pointer;
+    transition: all 125ms ease-in-out;
+    &:hover {
+        transform: scale(1.1) translateY(-10px);
+    }
+}
+
+.played-card {
+    right: 25px;
+    transform: scale(1.3) translateX(180px) translateY(-200px) rotate(10deg);
+}
+
+.pick-card {
+    animation: pick-card-animation 1s ease-in-out;
+    transform: scale(1.3) translateX(180px) translateY(-200px) rotate(10deg);
+}
+
+@keyframes pick-card-animation {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.7);
+    }
+    50% {
+        transform: scale(1.7);
+    }
+    100% {
+        transform: scale(1.3) translateX(180px) translateY(-200px) rotate(10deg);
+    }
+}
+
+.player-position {
+    position: absolute;
+    right: 0 !important;
+}
+
+.btn-add {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+    background-color: black;
+}
+
+.pin-bottom {
+    position: absolute;
+    right: 100px;
+    left: 100px;
+    bottom: 32px;
+}
+
+//responsive
+@media(max-width:600px) {
+    .field {
+        width: 100vw;
+        height: 100vh;
+        max-width: 100%;
+        background-image: url('../../assets/img/table.jpg');
+        background-repeat: no-repeat;
+        object-fit: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-stack {
+        position: relative;
+        bottom: 84px;
+        img {
+            position: absolute;
+            width: 87px;
+        }
+    }
+    .btn-add {
+        bottom: 100px;
+    }
+    .pin-bottom {
+        bottom: 100px;
+    }
+    .player-position {
+        position: absolute;
+        top: 0;
+        writing-mode: vertical-lr;
+    }
+    .played-card {
+        transform: scale(1.3) translateX(130px) translateY(-65px) rotate(10deg);
+    }
+    .pick-card {
+        transform: scale(1.3) translateX(130px) translateY(-65px) rotate(10deg);
+    }
+    @keyframes pick-card-animation {
+        100% {
+            transform: scale(1.3) translateX(130px) translateY(-65px) rotate(10deg);
+        }
+    }
+}
