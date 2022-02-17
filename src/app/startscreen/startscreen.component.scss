@@ -74,3 +74,11 @@ svg {
     font-size: 30px;
     font-weight: 100;
 }
+
+@media(max-width:600px) {
+    .start-screen {
+        img {
+            width: 400px;
+        }
+    }
+}

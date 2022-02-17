@@ -17,6 +17,12 @@ import { MatInputModule } from '@angular/material/input';
 import { GameInfoComponent } from './game-info/game-info.component';
 import { MatCardModule } from '@angular/material/card';
 import { DialogAlertComponent } from './dialog-alert/dialog-alert.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideFunctions,getFunctions } from '@angular/fire/functions';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -27,6 +33,7 @@ import { DialogAlertComponent } from './dialog-alert/dialog-alert.component';
     DialogAddPlayerComponent,
     GameInfoComponent,
     DialogAlertComponent
+
   ],
   imports: [
     BrowserModule,
@@ -39,6 +46,11 @@ import { DialogAlertComponent } from './dialog-alert/dialog-alert.component';
     FormsModule,
     MatInputModule,
     MatCardModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideFunctions(() => getFunctions()),
+    provideStorage(() => getStorage())
 
 
   ],

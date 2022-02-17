@@ -3,6 +3,9 @@ import { Game } from 'src/models/game';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 import { DialogAlertComponent } from '../dialog-alert/dialog-alert.component';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -16,14 +19,27 @@ export class GameComponent implements OnInit {
   playerAdded: boolean = false;
 
 
-  constructor(public dialog: MatDialog) { }
+
+  constructor(private route: ActivatedRoute, private router: Router, private firestore: AngularFirestore, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.newGame();
+    this.route.params.subscribe((params) => {
+      console.log(params)
+    })
+    this.firestore
+      .collection('games')
+      .valueChanges()
+      .subscribe((game) => {
+        console.log('New Game', game)
+      });
   }
 
   newGame() {
     this.game = new Game();
+    //this.firestore
+    //.collection('games')
+    //.add(this.game.toJson());
 
   }
 
@@ -41,8 +57,8 @@ export class GameComponent implements OnInit {
       setTimeout(() => {
         this.game.playedCards.push(this.currentCard);
         this.pickCardAnimation = false;
-      }, 1000);
-    } else {
+      }, 500);
+    } else if (!this.playerAdded) {
       this.openAlert();
     }
   }

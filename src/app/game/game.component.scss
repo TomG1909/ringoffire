@@ -11,6 +11,7 @@
 
 .card-stack {
     position: relative;
+    bottom: 40px;
     img {
         position: absolute;
         width: 140px;
@@ -69,12 +70,12 @@
     bottom: 32px;
 }
 
-.position {
-    top: 50px;
+.d-none {
+    display: none;
 }
 
 //responsive
-@media(max-width:600px) {
+@media(max-width:900px) {
     .field {
         width: 100vw;
         height: 100vh;
@@ -105,9 +106,11 @@
         top: 0;
         writing-mode: vertical-lr;
     }
-    .position {
-        top: 0;
-        left: 50px
+    .d-none {
+        display: block;
+    }
+    .hide-mobile {
+        display: none;
     }
     .played-card {
         transform: scale(1.3) translateX(130px) translateY(-65px) rotate(10deg);
@@ -118,6 +121,31 @@
     @keyframes pick-card-animation {
         100% {
             transform: scale(1.3) translateX(130px) translateY(-65px) rotate(10deg);
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    .pin-bottom {
+        bottom: 80px;
+        right: 0;
+        left: 0;
+    }
+    .btn-add {
+        right: 100px;
+        left: 100;
+        bottom: 20px;
+    }
+    .played-card {
+        transform: scale(1.3) translateX(60px) translateY(-113px) rotate(-29deg);
+    }
+    .pick-card {
+        animation: pick-card-animation 1s ease-in-out;
+        transform: scale(1.3) translateX(60px) translateY(-113px) rotate(-29deg);
+    }
+    @keyframes pick-card-animation {
+        100% {
+            transform: scale(1.3) translateX(60px) translateY(-113px) rotate(-29deg);
         }
     }
 }

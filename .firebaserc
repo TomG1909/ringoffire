@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "ring-of-fire-af258": {
+      "hosting": {
+        "RingOfFire": [
+          "ring-of-fire-af258"
+        ]
+      }
+    },
+    "ring-of-fire-e54fc": {
+      "hosting": {
+        "RingOfFire": [
+          "ring-of-fire-e54fc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ring-of-fire-e54fc"
+  }
+}
