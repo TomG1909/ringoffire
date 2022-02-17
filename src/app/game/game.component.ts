@@ -20,12 +20,12 @@ export class GameComponent implements OnInit {
 
 
 
-  constructor(private route: ActivatedRoute, private router: Router, private firestore: AngularFirestore, public dialog: MatDialog) { }
+  constructor(private router: Router, private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.newGame();
     this.route.params.subscribe((params) => {
-      console.log(params)
+      console.log(params);
     })
     this.firestore
       .collection('games')
