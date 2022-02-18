@@ -23,6 +23,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { SelectPictureComponent } from './select-picture/select-picture.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     PlayerComponent,
     DialogAddPlayerComponent,
     GameInfoComponent,
-    DialogAlertComponent
+    DialogAlertComponent,
+    SelectPictureComponent
 
   ],
   imports: [

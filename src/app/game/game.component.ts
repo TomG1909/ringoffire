@@ -6,6 +6,7 @@ import { DialogAlertComponent } from '../dialog-alert/dialog-alert.component';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import { ActivatedRoute, Router } from '@angular/router';
+import { SelectPictureComponent } from '../select-picture/select-picture.component';
 
 @Component({
   selector: 'app-game',
@@ -23,7 +24,7 @@ export class GameComponent implements OnInit {
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.newGame();
+
     this.route.params.subscribe((params: any) => {
       console.log(params.id);
       this.gameId = params.id;
@@ -47,7 +48,13 @@ export class GameComponent implements OnInit {
 
   }
 
-  newGame() {
+  selectPicture(playerId: number) {
+    console.log(playerId)
+    const dialogRef = this.dialog.open(SelectPictureComponent);
+    dialogRef.afterClosed().subscribe((change: string) => {
+
+      console.log(change)
+    });
 
   }
 
