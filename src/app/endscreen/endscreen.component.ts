@@ -1,37 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
 import { Game } from 'src/models/game';
 
 @Component({
-  selector: 'app-startscreen',
-  templateUrl: './startscreen.component.html',
-  styleUrls: ['./startscreen.component.scss']
+  selector: 'app-endscreen',
+  templateUrl: './endscreen.component.html',
+  styleUrls: ['./endscreen.component.scss']
 })
-export class StartscreenComponent implements OnInit {
+export class EndscreenComponent implements OnInit {
 
   constructor(private router: Router, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
-  }
 
-  newGame() {
-    //Start Game
+  }
+  restartGame() {
+    //Restart Game
 
     let game = new Game();
-    game.gameOver = false;
 
 
     this.firestore
       .collection('games')
       .add(game.toJson())
-      .then((gameinfo) => {
 
-        this.router.navigateByUrl('/game/' + gameinfo.id);
 
-      })
-
+    location.href = '/';
 
   }
+
 
 }

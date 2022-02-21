@@ -1,9 +1,9 @@
 .player {
     display: flex;
     align-items: center;
-    width: 300px;
+    overflow: hidden;
+    width: 250px;
     background-color: #3b310fb9;
-    padding: 10px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     border: 2px white solid;
@@ -12,7 +12,10 @@
         margin-left: 20px;
         color: white;
         font-weight: bold;
-        font-size: 30px;
+        font-size: 24px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
     img {
         width: 50px;

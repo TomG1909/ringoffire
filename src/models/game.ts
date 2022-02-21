@@ -6,6 +6,9 @@ export class Game {
     public pickCardAnimation = false;
     public currentCard: string = '';
     public playerAdded = false;
+    public playerImages: string[] = []
+    public gameOver = false;
+
 
     constructor() {
         for (let i = 1; i < 14; i++) {
@@ -27,7 +30,8 @@ export class Game {
             currentPlayer: this.currentPlayer,
             pickCardAnimation: this.pickCardAnimation,
             currentCard: this.currentCard,
-            playerAdded: this.playerAdded
+            playerAdded: this.playerAdded,
+            playerImages: this.playerImages
 
 
         }

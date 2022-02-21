@@ -24,6 +24,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { SelectPictureComponent } from './select-picture/select-picture.component';
+import { EndscreenComponent } from './endscreen/endscreen.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SelectPictureComponent } from './select-picture/select-picture.componen
     DialogAddPlayerComponent,
     GameInfoComponent,
     DialogAlertComponent,
-    SelectPictureComponent
+    SelectPictureComponent,
+    EndscreenComponent
 
   ],
   imports: [

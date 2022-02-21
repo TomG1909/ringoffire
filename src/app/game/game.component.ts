@@ -16,7 +16,6 @@ import { SelectPictureComponent } from '../select-picture/select-picture.compone
 export class GameComponent implements OnInit {
 
   game: Game = new Game;
-
   gameId: string;
 
 
@@ -41,7 +40,8 @@ export class GameComponent implements OnInit {
           this.game.players = game.players;
           this.game.pickCardAnimation = game.pickCardAnimation;
           this.game.currentCard = game.currentCard;
-          this.game.playerAdded = game.playerAdded
+          this.game.playerAdded = game.playerAdded;
+          this.game.playerImages = game.playerImages
 
         });
     })
@@ -52,14 +52,27 @@ export class GameComponent implements OnInit {
     console.log(playerId)
     const dialogRef = this.dialog.open(SelectPictureComponent);
     dialogRef.afterClosed().subscribe((change: string) => {
+      if (change) {
+        if (change == 'DELETE') {
+          this.game.playerImages.splice(playerId, 1);
+          this.game.players.splice(playerId, 1);
+        } else {
 
-      console.log(change)
+          this.game.playerImages[playerId] = change;
+          this.updateGame();
+
+        }
+
+
+      }
     });
 
   }
 
   takeCard() {
-    if (!this.game.pickCardAnimation && this.game.playerAdded) {
+    if (this.game.stack.length == 0) {
+      this.game.gameOver = true;
+    } else if (!this.game.pickCardAnimation && this.game.playerAdded) {
       this.game.currentCard = this.game.stack.pop();
       this.game.pickCardAnimation = true;
       this.game.currentPlayer++;
@@ -74,6 +87,7 @@ export class GameComponent implements OnInit {
     } else if (!this.game.playerAdded) {
       this.openAlert();
     }
+
   }
 
   openDialog(): void {
@@ -85,6 +99,7 @@ export class GameComponent implements OnInit {
     dialogRef.afterClosed().subscribe(name => {
       if (name && name.length > 0) {
         this.game.players.push(name);
+        this.game.playerImages.push('profile.png');
         this.game.playerAdded = true;
         this.updateGame();
         console.log(this.game.playerAdded)
