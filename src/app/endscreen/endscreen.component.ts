@@ -19,14 +19,19 @@ export class EndscreenComponent implements OnInit {
     //Restart Game
 
     let game = new Game();
+    location.pathname = '/';
 
 
     this.firestore
       .collection('games')
       .add(game.toJson())
+      .then((gameinfo) => {
+
+        this.router.navigateByUrl('/game/' + gameinfo.id);
+
+      })
 
 
-    location.href = '/';
 
   }
 
