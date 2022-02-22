@@ -19,7 +19,7 @@ export class EndscreenComponent implements OnInit {
     //Restart Game
 
     let game = new Game();
-    location.pathname = '/';
+
 
 
     this.firestore
