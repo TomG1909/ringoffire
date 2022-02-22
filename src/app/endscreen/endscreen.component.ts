@@ -18,19 +18,7 @@ export class EndscreenComponent implements OnInit {
   restartGame() {
     //Restart Game
 
-    let game = new Game();
-
-
-
-    this.firestore
-      .collection('games')
-      .add(game.toJson())
-      .then((gameinfo) => {
-
-        this.router.navigateByUrl('/game/' + gameinfo.id);
-
-      })
-
+    location.pathname = 'ring-of-fire/'
 
 
   }
