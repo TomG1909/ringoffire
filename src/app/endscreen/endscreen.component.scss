@@ -1,42 +1,35 @@
-.start-screen {
-    background-color: black;
-    width: 100vw;
+.card {
+    position: absolute;
     height: 100vh;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-        max-height: 100vh;
-        object-fit: contain;
-    }
+    right: 0;
+    object-fit: cover;
 }
 
-.btn-position {
+.title {
     position: absolute;
+    width: 450px;
+}
+
+#myVideo {
+    position: fixed;
     right: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .container {
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
 .center {
-    width: 180px;
-    height: 60px;
-    position: absolute;
-    bottom: 83px;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn {
@@ -75,10 +68,52 @@ svg {
     font-weight: 100;
 }
 
+.btn-position {
+    z-index: 99;
+    position: absolute;
+}
+
+.d-none {
+    display: none;
+}
+
 @media(max-width:600px) {
     .start-screen {
         img {
             width: 400px;
         }
+    }
+    .card {
+        position: absolute;
+        height: 100vh;
+        right: 0;
+        width: 300px;
+        object-fit: cover;
+    }
+    .title {
+        position: absolute;
+        width: 450px;
+    }
+    .hide-mobile {
+        display: none;
+    }
+    .center {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn {
+        width: 140px;
+    }
+    .d-none {
+        display: block;
+    }
+}
+
+@media(max-width:450px) {
+    .title {
+        width: 250px;
     }
 }

@@ -1,15 +1,28 @@
-<div class="start-screen">
+<video autoplay muted loop id="myVideo">
+  <source src="assets/video/fire.mp4" type="video/mp4">
+</video>
 
-    <img src="assets/img/ringoffire.png">
-</div>
-<div class="container  btn-position">
+<div class="container">
+    <img class="card hide-mobile" src="./assets/img/Card.png">
     <div class="center">
-        <button class="btn" (click)="newGame()">
-        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+        <img class="title" src="./assets/img/title.png">
+        <div class="btn-position">
+            <button class="btn" (click)="newGame()">
+             
+        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border hide-mobile">
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
         </svg>
+
+        <svg width="140px" height="60px" viewBox="0 0 140 60" class="border d-none">
+          <polyline points="139,1 139,59 1,59 1,1 139,1" class="bg-line" />
+          <polyline points="139,1 139,59 1,59 1,1 139,1" class="hl-line" />
+        </svg>
+      
+      
         <span>Start</span>
       </button>
+
+        </div>
     </div>
 </div>
