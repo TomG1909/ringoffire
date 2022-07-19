@@ -3,11 +3,13 @@
     height: 100vh;
     right: 0;
     object-fit: cover;
+
 }
 
 .title {
     position: absolute;
     width: 600px;
+
 }
 
 #myVideo {
@@ -19,9 +21,10 @@
 }
 
 .container {
-    position: relative;
+    position: fixed;
     width: 100vw;
     height: 100vh;
+    z-index: 5;
 }
 
 .center {
@@ -83,6 +86,7 @@ svg {
             width: 400px;
         }
     }
+
     .card {
         position: absolute;
         height: 100vh;
@@ -90,13 +94,16 @@ svg {
         width: 300px;
         object-fit: cover;
     }
+
     .title {
         position: absolute;
         width: 450px;
     }
+
     .hide-mobile {
         display: none;
     }
+
     .center {
         height: 100vh;
         width: 100vw;
@@ -104,9 +111,11 @@ svg {
         justify-content: center;
         align-items: center;
     }
+
     .btn {
         width: 140px;
     }
+
     .d-none {
         display: block;
     }

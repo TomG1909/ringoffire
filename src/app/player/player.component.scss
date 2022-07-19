@@ -8,6 +8,7 @@
     border-bottom-left-radius: 50px;
     border: 2px white solid;
     border-right: none;
+
     span {
         margin-left: 20px;
         color: white;
@@ -17,10 +18,12 @@
         white-space: nowrap;
         overflow: hidden;
     }
+
     img {
         width: 50px;
         border-radius: 100%;
     }
+
     &:hover {
         filter: brightness(1.5);
     }
@@ -29,6 +32,8 @@
 .player-active {
     background-color: #009DDC;
 }
+
+
 
 @media(max-width:900px) {
     .player {
@@ -39,11 +44,13 @@
         border-bottom-right-radius: 50px;
         border-right: 2px white solid;
         border-top: none;
+
         span {
             margin-left: 0px;
             font-size: 18px;
             margin-bottom: 10px;
         }
+
         img {
             width: 25px;
             margin-bottom: 10px;

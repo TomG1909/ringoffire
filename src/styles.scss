@@ -11,3 +11,25 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+/*.mat-dialog-container {
+    box-shadow: 0 11px 15px -7px #0003, 0 24px 38px 3px #00000024, 0 9px 46px 8px #0000001f;
+    background: #424242;
+    color: #fff;
+}*/
+
+.mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #009DDC !important;
+}
+
+.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #009DDC !important;
+}
+
+.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: #009DDC !important;
+    ;
+}

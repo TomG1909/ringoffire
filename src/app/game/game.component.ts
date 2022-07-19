@@ -14,11 +14,11 @@ import { SelectPictureComponent } from '../select-picture/select-picture.compone
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-
+  allPictures = ['girl_pink.png', 'girl.png', 'man_v.png', 'man.png', 'music.png', 'ninja.png', 'people.png', 'punk.png', 'woman_bl.png', 'woman.png'];
   game: Game = new Game;
   gameId: string;
 
-
+  randomImage = this.allPictures[Math.floor(Math.random() * this.allPictures.length)];
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
 
@@ -92,6 +92,8 @@ export class GameComponent implements OnInit {
 
   openDialog(): void {
 
+
+
     const dialogRef = this.dialog.open(DialogAddPlayerComponent, {
 
     });
@@ -99,10 +101,10 @@ export class GameComponent implements OnInit {
     dialogRef.afterClosed().subscribe(name => {
       if (name && name.length > 0) {
         this.game.players.push(name);
-        this.game.playerImages.push('profile.png');
+        this.game.playerImages.push(this.randomImage);
         this.game.playerAdded = true;
         this.updateGame();
-        console.log(this.game.playerAdded)
+        console.log('randomImage', this.randomImage)
       }
     });
   }
