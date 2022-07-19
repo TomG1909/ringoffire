@@ -13,17 +13,19 @@ export class DialogAddPlayerComponent implements OnInit {
 
   @Input() type: 'submit';
 
-  @HostListener('document:keydown.enter')
-  onEnter() {
-    // function  dialogRef.afterClosed().subscribe....
-  }
+
   name: string = '';
   constructor(public dialogRef: MatDialogRef<DialogAddPlayerComponent>) { }
 
+  @HostListener('window:keyup.Enter', ['$event'])
+  onEnter(event: KeyboardEvent): void {
+    this.close()
+  }
+
   ngOnInit(): void {
   }
-  onNoClick() {
-    this.dialogRef.close();
+  close() {
+    this.dialogRef.close(true);
 
   }
 
