@@ -10,11 +10,6 @@ import { Game } from 'src/models/game';
 
 
 export class DialogAddPlayerComponent implements OnInit {
-  allPictures = ['girl_pink.png', 'girl.png', 'man_v.png', 'man.png', 'music.png', 'ninja.png', 'people.png', 'punk.png', 'woman_bl.png', 'woman.png'];
-  game: Game = new Game;
-  gameId: string;
-
-  randomImage = this.allPictures[Math.floor(Math.random() * this.allPictures.length)];
 
   @Input() type: 'submit';
 
