@@ -13,7 +13,7 @@
 <div mat-dialog-actions>
     
    
-    <button mat-button type="submit" [disabled]="name.length == 0" [mat-dialog-close]="name" cdkFocusInitial>Ok</button>
+    <div [class.btn]="name"><button mat-button type="submit" [disabled]="name.length == 0" [mat-dialog-close]="name" cdkFocusInitial>Ok</button></div>
     <button mat-button (click)="close()">No Thanks</button>
 
  </div>

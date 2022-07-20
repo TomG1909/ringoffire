@@ -19,14 +19,16 @@ export class DialogAddPlayerComponent implements OnInit {
 
   @HostListener('window:keyup.Enter', ['$event'])
   onEnter(event: KeyboardEvent): void {
-    this.close()
+    this.save()
   }
 
   ngOnInit(): void {
   }
+  save() {
+    this.dialogRef.close(this.name);
+  }
   close() {
-    this.dialogRef.close(true);
-
+    this.dialogRef.close();
   }
 
 
